@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Order Coffee & Dessert</title>
+</head>
+
+<body class="bg-[#F3E9D7] flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+
+  <h2 class="text-2xl font-bold mb-4 text-center">
+    Order Coffee & Dessert ☕🍰
+  </h2>
+
+  <form id="orderForm" class="space-y-4">
+
+    <!-- NAME -->
+    <input type="text" placeholder="Your Name"
+      class="w-full p-2 border rounded" required>
+
+    <!-- ORDER TYPE -->
+    <label class="font-semibold">Order Type</label>
+    <select id="orderType" class="w-full p-2 border rounded">
+      <option value="Dine In">Dine In (Eat Here)</option>
+      <option value="Take Away">Take Away</option>
+    </select>
+
+    <!-- COFFEE -->
+    <label class="font-semibold">Coffee</label>
+    <select id="coffee" class="w-full p-2 border rounded">
+        <option value="150">Espresso - Rs 150</option>
+        <option value="180">Cappuccino - Rs 180</option>
+        <option value="190">Latte - Rs 190</option>
+        <option value="160">Americano - Rs 160</option>
+        <option value="200">Mocha - Rs 200</option>
+        <option value="170">Macchiato - Rs 170</option>
+        <option value="210">Cold Brew - Rs 210</option>
+        <option value="230">Affogato - Rs 230</option>
+    </select>
+
+    <!-- QUANTITY COFFEE -->
+    <input type="number" id="qtyCoffee" value="1" min="0"
+      class="w-full p-2 border rounded" placeholder="Coffee Quantity">
+
+    <!-- DESSERT -->
+    <label class="font-semibold">Dessert</label>
+    <select id="dessert" class="w-full p-2 border rounded">
+        <option value="199">Gulab Jamun - Rs 199</option>
+        <option value="250">Chocolate Tiramisu - Rs 250</option>
+        <option value="170">Churros - Rs 170</option>
+        <option value="200">Australian Lamingtons - Rs 200</option>
+        <option value="220">Macarons - Rs 220</option>
+        <option value="260">Cheesecake - Rs 260</option>
+        <option value="180">Brownies - Rs 180</option>
+        <option value="210">Pancakes - Rs 210</option>
+    </select>
+
+    <!-- QUANTITY DESSERT -->
+    <input type="number" id="qtyDessert" value="0" min="0"
+      class="w-full p-2 border rounded" placeholder="Dessert Quantity">
+
+    <!-- ADDRESS -->
+    <textarea placeholder="Delivery Address"
+      class="w-full p-2 border rounded"></textarea>
+
+    <!-- TOTAL -->
+    <p class="font-semibold text-lg">
+      Total: Rs <span id="total">0</span>
+    </p>
+
+    <!-- BUTTON -->
+    <button type="submit"
+      class="w-full bg-[#3A2321] text-white py-2 rounded hover:bg-black">
+      Order Now
+    </button>
+
+  </form>
+
+</div>
+
+<!-- JS -->
+<script>
+const coffee = document.getElementById("coffee");
+const dessert = document.getElementById("dessert");
+const qtyCoffee = document.getElementById("qtyCoffee");
+const qtyDessert = document.getElementById("qtyDessert");
+const totalText = document.getElementById("total");
+const orderType = document.getElementById("orderType");
+
+function updateTotal() {
+  const coffeePrice = parseInt(coffee.value) || 0;
+  const dessertPrice = parseInt(dessert.value) || 0;
+  const cQty = parseInt(qtyCoffee.value) || 0;
+  const dQty = parseInt(qtyDessert.value) || 0;
+
+  const total = (coffeePrice * cQty) + (dessertPrice * dQty);
+  totalText.textContent = total;
+}
+
+coffee.addEventListener("change", updateTotal);
+dessert.addEventListener("change", updateTotal);
+qtyCoffee.addEventListener("input", updateTotal);
+qtyDessert.addEventListener("input", updateTotal);
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert(
+    "Order Successful!\n" +
+    "Order Type: " + orderType.value + "\n" +
+    "Total: Rs " + totalText.textContent
+  );
+});
+
+updateTotal();
+</script>
+
+</body>
+</html>

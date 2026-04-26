@@ -1,0 +1,906 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee shop</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Hide Scrollbar -->
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  #slider > div {
+  flex: 0 0 calc((100% - 72px) / 4);
+}
+
+  .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+  </style>
+  </head>
+  <body>
+
+<!-- NAVBAR -->
+<div id="navbar" class="max-lg:collapse fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-md transition-all duration-300">
+  
+  <input id="navbar-1-toggle" class="peer hidden" type="checkbox" />
+  <label for="navbar-1-toggle" class="fixed inset-0 hidden max-lg:peer-checked:block"></label>
+
+  <div class="collapse-title navbar text-white">
+
+    <!-- LOGO -->
+    <div class="navbar-start">
+      <label for="navbar-1-toggle" class="btn btn-ghost lg:hidden text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16" />
+        </svg>
+      </label>
+      <a class="pl-20 text-xl text-white font-bold">COFFEE SHOP</a>
+    </div>
+
+    <!-- MENU -->
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1 text-white [&>li>a]:hover:text-amber-400">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#coffee">Coffee</a></li>
+        <li><a href="#bakery">Bakery</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    
+    <!-- SEARCH -->
+    <div class="navbar-end relative pr-6">
+
+      <!-- ICON -->
+      <button id="searchBtn" class="btn btn-circle bg-white/20 border-none text-white hover:bg-white/30">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="h-5 w-5" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke="currentColor">
+          <path stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+
+      <!-- INPUT -->
+      <input id="searchInput"
+        type="text"
+        placeholder="Search..."
+        class="absolute right-0 top-1/2 -translate-y-1/2 
+               w-0 opacity-0 
+               input input-bordered text-black
+               transition-all duration-300 ease-in-out" />
+
+    </div>
+
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero h-[550px] relative" id="home"
+  style="background-image: url(img/bg.jpeg);">
+
+  <div class="hero-overlay bg-black/60"></div>
+
+  <div class="hero-content w-full justify-start pl-25 text-neutral-content">
+    <div class="max-w-md text-left">
+      <h4 class="mb-3 text-2xl">Welcome!</h4>
+      <h1 class="mb-5 text-4xl font-bold">
+        We serve the richest coffee in the city!
+      </h1>
+      <button class="btn btn rounded-md bg-light border border-[#3A2321] text-black hover:bg-[#3A2321]">
+  Get Started
+</button>
+    </div>
+  </div>
+
+</div>
+
+<!--logo-->
+
+<div class="bg-[#F3E9D7] py-6">
+  <div class="flex justify-center items-center gap-25 text-center">
+    <!-- ITEM -->
+    <div class="group flex flex-col items-center text-gray-700 cursor-pointer transition">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-8 h-8 mb-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:text-[#4B2E2B]" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M3 8h13v5a4 4 0 01-4 4H7a4 4 0 01-4-4V8z" />
+        <path d="M16 8h2a2 2 0 010 4h-2" />
+      </svg>
+
+      <p class="text-xs m-0 leading-none transition-all duration-300  group-hover:text-[#4B2E2B]">
+        HOT COFFEE
+      </p>
+
+    </div>
+
+    <!-- COPY untuk item lain -->
+    <div class="group flex flex-col items-center text-gray-700 cursor-pointer transition">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-8 h-8 mb-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:text-[#4B2E2B]" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M7 3h10l-1 18H8L7 3z" />
+        <path d="M9 3v2M12 3v2M15 3v2" />
+      </svg>
+      <p class="text-xs m-0 leading-none transition-all duration-300 group-hover:text-[#4B2E2B]">
+        COLD COFFEE
+      </p>
+    </div>
+
+    <div class="group flex flex-col items-center text-gray-700 cursor-pointer transition">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-8 h-8 mb-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:text-[#4B2E2B]" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M6 10a6 6 0 1112 0H6z" />
+        <path d="M4 10h16l-2 10H6L4 10z" />
+      </svg>
+      <p class="text-xs m-0 leading-none transition-all duration-300 group-hover:text-[#4B2E2B]">
+        CUP CAKE
+      </p>
+    </div>
+
+    <div class="group flex flex-col items-center text-gray-700 cursor-pointer transition">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-8 h-8 mb-1 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-110 group-hover:text-[#4B2E2B]" 
+           fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20z" />
+        <path d="M12 6v6l4 2" />
+      </svg>
+      <p class="text-xs m-0 leading-none transition-all duration-300 group-hover:text-[#4B2E2B]">
+        DESSERT
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!--coffee-->
+<!-- SECTION -->
+<div class="py-12 px-6" id="coffee">
+
+  <h2 class="text-center text-sm tracking-widest text-gray-600 mb-8">
+    OUR SPECIAL COFFEE
+  </h2>
+
+  <div class="relative max-w-6xl mx-auto overflow-hidden">
+
+    <!-- LEFT -->
+    <button onclick="moveSlide('coffeeSlider', -1)"
+      class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+      ❮
+    </button>
+
+    <!-- SLIDER -->
+    <div id="coffeeSlider" class="flex gap-6 px-10 overflow-hidden scroll-smooth">
+
+      <!-- CARD 1 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c1.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Espresso</h3>
+        <p class="text-xs text-gray-500">Strong and pure coffee shot.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 150</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c2.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Cappuccino</h3>
+        <p class="text-xs text-gray-500">Espresso with steamed milk foam.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 180</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c3.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Latte</h3>
+        <p class="text-xs text-gray-500">Smooth milk coffee blend.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 190</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c4.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Americano</h3>
+        <p class="text-xs text-gray-500">Espresso with hot water.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 160</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c5.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Mocha</h3>
+        <p class="text-xs text-gray-500">Coffee with chocolate flavor.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 200</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c6.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Macchiato</h3>
+        <p class="text-xs text-gray-500">Espresso with milk foam.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 170</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c7.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Cold Brew</h3>
+        <p class="text-xs text-gray-500">Chilled smooth coffee.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 210</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg">
+          <img src="img/c8.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="white" stroke-width="2" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+                c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+                21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+            </svg>
+          </button>
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Affogato</h3>
+        <p class="text-xs text-gray-500">Espresso with ice cream.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold">Rs. 230</p>
+          <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">Order Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <button onclick="moveSlide('coffeeSlider', 1)"
+      class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+      ❯
+    </button>
+
+  </div>
+</div>
+
+
+<!--dessert-->
+
+<!-- SECTION -->
+<div class="py-12 px-6" id="bakery">
+
+  <h2 class="text-center text-sm tracking-widest text-gray-600 mb-8">
+    OUR SPECIAL DESSERT
+  </h2>
+
+  <div class="relative max-w-6xl mx-auto overflow-hidden">
+
+    <!-- LEFT -->
+    <button onclick="moveSlide('dessertSlider', -1)"
+      class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+      ❮
+    </button>
+    <!-- SLIDER -->
+    <div id="dessertSlider"
+  class="flex gap-6 px-10 overflow-hidden scroll-smooth">
+  
+      <!-- CARD 1-->
+      <div class="min-w-[240px] group cursor-pointer">
+        <div class="relative overflow-hidden rounded-lg group">
+  
+          <img src="img/d1.jpeg" class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+        <!-- Icon Love Outline -->
+          <button class="absolute top-2 right-2 p-2 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="white" 
+            stroke-width="2"
+            class="w-6 h-6">
+      
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+            c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+            21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+          </svg>
+          </button>
+
+        </div>
+        <h3 class="text-xl font-semibold mt-2">Gulab Jamun</h3>
+        <p class="text-xs text-gray-500 ">Sweet syrup-soaked dumplings.</p>
+        <div class="flex items-center justify-between">
+          <p class="text-lg font-bold text-black fo">Rs. 199</p>
+        <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+          Order Now
+        </button>
+        </div>
+        
+      </div>
+      <!--card 2-->
+      <div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    
+    <img src="img/d2.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <!-- Love Icon -->
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Chocolate Tiramisu</h3>
+  <p class="text-xs text-gray-500">Creamy chocolate layered dessert.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 250</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+      <!--card 3-->
+      <div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    
+    <img src="img/d3.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Churros</h3>
+  <p class="text-xs text-gray-500">Crispy sugar-coated sticks.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 170</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+      <!--card 4-->
+      <div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    
+    <img src="img/d4.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Australian Lamingtons</h3>
+  <p class="text-xs text-gray-500">Chocolate coconut sponge cake.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 200</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+
+  <!--slide 2-->
+  <!-- CARD 5 -->
+<div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    <img src="img/d5.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Macarons</h3>
+  <p class="text-xs text-gray-500">Colorful sweet meringue cookies.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 220</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+
+<!-- CARD 6 -->
+<div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    <img src="img/d6.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Cheesecake</h3>
+  <p class="text-xs text-gray-500">Smooth creamy cheese dessert.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 260</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+
+<!-- CARD 7 -->
+<div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    <img src="img/d7.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Brownies</h3>
+  <p class="text-xs text-gray-500">Rich and fudgy chocolate squares.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 180</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+
+<!-- CARD 8 -->
+<div class="min-w-[240px] group cursor-pointer">
+  <div class="relative overflow-hidden rounded-lg group">
+    <img src="img/d8.jpeg"
+      class="w-full h-56 object-cover transition duration-300 group-hover:scale-110">
+
+    <button class="absolute top-2 right-2 p-2 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="white" stroke-width="2" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4.318 6.318C5.762 4.873 8.048 4.873 9.492 6.318L12 8.828l2.508-2.51
+          c1.444-1.445 3.73-1.445 5.174 0 1.445 1.445 1.445 3.73 0 5.174L12 
+          21 4.318 11.492c-1.445-1.445-1.445-3.73 0-5.174z"/>
+      </svg>
+    </button>
+  </div>
+
+  <h3 class="text-xl font-semibold mt-2">Pancakes</h3>
+  <p class="text-xs text-gray-500">Soft fluffy breakfast dessert.</p>
+
+  <div class="flex items-center justify-between">
+    <p class="text-lg font-bold text-black">Rs. 210</p>
+    <button class="mt-2 px-3 py-1 text-xs bg-black text-white rounded-full">
+      Order Now
+    </button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- RIGHT -->
+   <button onclick="moveSlide('dessertSlider', 1)"
+      class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2">
+      ❯
+    </button>
+
+    
+
+  </div>
+</div>
+
+
+<!--kopi-->
+
+<div class="w-full bg-[#F3E9D7] py-12 px-6 relative overflow-hidden">
+
+  <!-- BIJI KOPI KIRI -->
+  <img src="img/k1.png"
+    class="absolute left-0 top-1/2 -translate-y-1/2 w-60 opacity-80">
+
+  <!-- BIJI KOPI KANAN -->
+  <img src="img/k2.png"
+    class="absolute right-0 top-1/2 -translate-y-1/2 w-60 opacity-80">
+
+  <!-- TEXT TENGAH -->
+  <div class="text-center max-w-xl mx-auto">
+    <h2 class="text-2xl md:text-3xl font-semibold text-[#3A2321]">
+      Check out our best <br> coffee beans
+    </h2>
+
+    <button class="mt-4 px-6 py-2 rounded-full bg-[#3A2321] text-white text-sm hover:bg-black transition">
+      Explore our products
+    </button>
+  </div>
+
+</div>
+
+<!--comen-->
+<!-- SECTION -->
+<div class="py-16 bg-[#f5f2ec]">
+
+  <!-- TITLE -->
+  <div class="text-center mb-10">
+    <p class="text-sm text-gray-500 italic">Come and join</p>
+    <h2 class="text-xl font-semibold tracking-widest">
+      OUR HAPPY CUSTOMERS
+    </h2>
+  </div>
+
+  <!-- CONTAINER (BATAS 3 CARD) -->
+  <div class="max-w-5xl mx-auto overflow-hidden">
+
+    <!-- SLIDER -->
+    <div class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar px-2">
+
+      <!-- CARD 1 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow transition duration-300 hover:-translate-y-3 hover:shadow-xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o1.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Jane Adams</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500">
+          I love this coffee shop! The atmosphere is cozy and the coffee tastes amazing.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o2.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Sam Williams</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600">
+          Best coffee in town. I’ve been coming here for years and never get disappointed.
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow transition duration-300 hover:-translate-y-3 hover:shadow-xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o3.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Angela Romero</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500">
+          Friendly staff and great desserts. Highly recommended for relaxing time.
+        </p>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow transition duration-300 hover:-translate-y-3 hover:shadow-xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o4.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Michael Lee</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500">
+          The ambiance is perfect for work and meetings. Coffee quality is top-notch.
+        </p>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow transition duration-300 hover:-translate-y-3 hover:shadow-xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o5.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Sofia Kim</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500">
+          Amazing place to hang out with friends. The drinks are delicious!
+        </p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="min-w-[calc((100%-48px)/3)] snap-start bg-white p-5 rounded-lg shadow transition duration-300 hover:-translate-y-3 hover:shadow-xl active:scale-95">
+        <div class="flex items-center gap-3 mb-3">
+          <img src="img/o6.jpeg" class="w-10 h-10 rounded-full">
+          <div>
+            <h3 class="text-sm font-semibold">Daniel Park</h3>
+            <p class="text-xs text-yellow-500">★★★★★</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500">
+          One of the best coffee experiences I've ever had. Will come back again!
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+ 
+<!--join-->
+
+<!-- SECTION -->
+<div class="w-full bg-[#F3E9D7] py-14 px-6 relative overflow-hidden">
+
+  <!-- GAMBAR KIRI -->
+  <img src="img/a.png"
+    class="absolute left-0 top-1/2 -translate-y-1/2 w-72 opacity-90">
+
+  <!-- GAMBAR KANAN -->
+  <img src="img/b.png"
+    class="absolute right-0 top-1/2 -translate-y-1/2 w-72 opacity-90">
+
+  <!-- CONTENT -->
+  <div class="text-center max-w-xl mx-auto">
+
+    <h2 class="text-2xl md:text-3xl font-semibold text-[#3A2321]">
+      Join in and get 15% Off!
+    </h2>
+
+    <p class="text-sm text-gray-500 mt-2 mb-6">
+      Subscribe to our newsletter and get discount code
+    </p>
+
+    <!-- INPUT + BUTTON -->
+    <div class="flex items-center justify-center gap-2">
+
+      <input type="email"
+        placeholder="Enter your email"
+        class="px-4 py-2 rounded-full w-64 outline-none border border-gray-300 focus:ring-2 focus:ring-[#3A2321]">
+
+      <button class="px-5 py-2 rounded-full bg-[#3A2321] text-white text-sm hover:bg-black transition">
+        Subscribe
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!--footer-->
+
+<!-- FOOTER -->
+<footer class="bg-[#3A2321] text-white py-12 px-10">
+
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+
+    <!-- LOGO -->
+    <div>
+      <h2 class="text-xl font-bold mb-3">COFFEE</h2>
+      <p class="text-sm text-gray-300">
+        Serving the best coffee in town with passion and quality.
+      </p>
+    </div>
+
+    <!-- MENU -->
+    <div>
+      <h3 class="font-semibold mb-3">MENU</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="#home" class="hover:text-amber-400">Home</a></li>
+        <li><a href="#coffee" class="hover:text-amber-400">Coffee</a></li>
+        <li><a href="#bakery" class="hover:text-amber-400">Bakery</a></li>
+        <li><a href="shop.html" class="hover:text-amber-400">Shop</a></li>
+        <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div>
+      <h3 class="font-semibold mb-3">SERVICES</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="#" class="hover:text-amber-400">Online Order</a></li>
+        <li><a href="#" class="hover:text-amber-400">Reservation</a></li>
+        <li><a href="#" class="hover:text-amber-400">Delivery</a></li>
+        <li><a href="#" class="hover:text-amber-400">Customer Support</a></li>
+      </ul>
+    </div>
+
+    <!-- INFORMATION -->
+    <div>
+      <h3 class="font-semibold mb-3">INFORMATION</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li><a href="about.html" class="hover:text-amber-400">About Us</a></li>
+        <li><a href="#" class="hover:text-amber-400">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-amber-400">Terms & Conditions</a></li>
+        <li><a href="#" class="hover:text-amber-400">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+    <div>
+      <h3 class="font-semibold mb-3">SOCIAL MEDIA</h3>
+      <div class="flex gap-4 text-xl">
+
+        <!-- ICON -->
+        <a href="#" class="hover:text-amber-400">
+          <i class="bi bi-twitter"></i>
+        </a>
+
+        <a href="#" class="hover:text-amber-400">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <a href="#" class="hover:text-amber-400">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="#" class="hover:text-amber-400">
+          <i class="bi bi-linkedin"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
